@@ -60,3 +60,5 @@ class RootComponent(py3dengine.Component):
             return self.targets[name]
 
         self.targets[name] = self.get_owner().get_child_by_name(name)
+
+        return self.targets[name]
