@@ -3,6 +3,7 @@
   "resources": [
     "Components/CameraComponent.json",
     "Components/RotationComponent.json",
+    "Components/RootComponent.json",
     "Shaders/general_pnt.json",
     "Textures/test_pattern_linear.json",
     "Textures/test_pattern_point.json",
@@ -29,7 +30,12 @@
         "z": 1.0
       }
     },
-    "components": [],
+    "components": [
+      {
+        "name": "Root.RC",
+        "type": "RootComponent"
+      }
+    ],
     "children": [
       {
         "name": "Cube",
