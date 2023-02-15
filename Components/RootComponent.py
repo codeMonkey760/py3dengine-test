@@ -6,6 +6,7 @@ class RootComponent(py3dengine.Component):
         self.state = 0
         self.stateChangeTimeout = 1.0
         self.timeSinceStateChange = 0.0
+        self.targets = {}
 
     def update(self, dt):
         self.timeSinceStateChange = self.timeSinceStateChange + dt
@@ -42,12 +43,20 @@ class RootComponent(py3dengine.Component):
         return newState
 
     def enableGO(self, name, value):
-        parent = self.get_owner()
-        target = parent.get_child_by_name(name)
-        target.enable(value)
+        self.get_target(name).enable(value)
 
     def makeGOVisible(self, name, value):
-        parent = self.get_owner()
-        target = parent.get_child_by_name(name)
-        target.make_visible(value)
+        self.get_target(name).make_visible(value)
 
+    def resetScene(self):
+        targets = ['Cube', 'Pyramid', 'Quad']
+        for name in targets:
+            target = self.get_target(name)
+            target.enable(True)
+            target.make_visible(True)
+
+    def get_target(self, name):
+        if name in self.targets.keys():
+            return self.targets[name]
+
+        self.targets[name] = self.get_owner().get_child_by_name(name)
