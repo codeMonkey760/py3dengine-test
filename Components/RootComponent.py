@@ -43,11 +43,11 @@ class RootComponent(py3dengine.Component):
 
     def enableGO(self, name, value):
         parent = self.get_owner()
-        target = parent.find_child_by_name(name)
+        target = parent.get_child_by_name(name)
         target.enable(value)
 
     def makeGOVisible(self, name, value):
         parent = self.get_owner()
-        target = parent.find_child_by_name(name)
+        target = parent.get_child_by_name(name)
         target.make_visible(value)
 
