@@ -3,6 +3,7 @@ import py3dengine
 
 class CameraComponent(py3dengine.Component):
     def __init__(self):
+        super().__init__(self)
         self.fov_x_in_degrees = 0.0
         self.near_z = 0.0
         self.far_z = 0.0

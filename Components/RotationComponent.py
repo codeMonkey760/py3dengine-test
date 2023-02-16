@@ -4,6 +4,7 @@ from py3dmath import Vector3, Quaternion
 
 class RotationComponent(py3dengine.Component):
     def __init__(self):
+        super().__init__(self)
         self.speed = 0.0
         self.axis = Vector3(0, 0, 1)
 

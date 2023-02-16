@@ -3,6 +3,7 @@ import py3dengine
 
 class RootComponent(py3dengine.Component):
     def __init__(self):
+        super().__init__(self)
         self.state = 0
         self.stateChangeTimeout = 1.0
         self.timeSinceStateChange = 0.0
