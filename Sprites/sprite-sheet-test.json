@@ -1,0 +1,11 @@
+{
+    "name": "sprite_sheet_test",
+    "type": "SpriteSheet",
+    "file_name": "sprite-sheet-test.png",
+    "sprites": {
+        "red": [1,1,30,30],
+        "green": [33,1,30,30],
+        "blue": [1,33,30,30],
+        "yellow": [33,33,30,30]
+    }
+}
