@@ -8,7 +8,8 @@
     "Textures/test_pattern_linear.json",
     "Textures/test_pattern_point.json",
     "Meshes/solid_objs.obj",
-    "Materials/solid_objs.mtl"
+    "Materials/solid_objs.mtl",
+    "Sprites/sprite-sheet-test.json"
   ],
   "scene_root": {
     "name": "root",
