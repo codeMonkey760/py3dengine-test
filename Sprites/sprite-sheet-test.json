@@ -1,7 +1,7 @@
 {
     "name": "sprite_sheet_test",
     "type": "SpriteSheet",
-    "filename": "Textures/sprite_sheet_test.png",
+    "filename": "Sprites/sprite_sheet_test.png",
     "texture_parameters": {
         "GL_TEXTURE_MIN_FILTER": "GL_NEAREST",
         "GL_TEXTURE_MAG_FILTER": "GL_NEAREST",
