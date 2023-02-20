@@ -1,7 +1,13 @@
 {
     "name": "sprite_sheet_test",
     "type": "SpriteSheet",
-    "file_name": "sprite-sheet-test.png",
+    "filename": "Textures/sprite_sheet_test.png",
+    "texture_parameters": {
+        "GL_TEXTURE_MIN_FILTER": "GL_NEAREST",
+        "GL_TEXTURE_MAG_FILTER": "GL_NEAREST",
+        "GL_TEXTURE_WRAP_T": "GL_REPEAT",
+        "GL_TEXTURE_WRAP_S": "GL_REPEAT"
+    },
     "sprites": {
         "red": [1,1,30,30],
         "green": [33,1,30,30],
