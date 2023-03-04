@@ -218,7 +218,8 @@
             "type": "SpriteRendererComponent",
             "sprite": "red"
           }
-        ]
+        ],
+        "children": []
       }
     ]
   }
