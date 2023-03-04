@@ -4,6 +4,7 @@
     "Components/CameraComponent.json",
     "Components/RotationComponent.json",
     "Components/RootComponent.json",
+    "Components/KeyboardControllerComponent.json",
     "Shaders/general_pnt.json",
     "Textures/test_pattern_linear.json",
     "Textures/test_pattern_point.json",
@@ -188,6 +189,11 @@
             "fov_x_in_degrees": 100.0,
             "near_z": 0.05,
             "far_z": 10.0
+          },
+          {
+            "name": "Camera.KCC",
+            "type": "KeyboardControllerComponent",
+            "speed": 0.5
           }
         ],
         "children": []
