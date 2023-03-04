@@ -5,6 +5,7 @@ import py3dmath
 
 class KeyboardControllerComponent(py3dengine.Component):
     def __init__(self):
+        super().__init__(self)
         self.speed = 1
 
     def update(self, dt):
