@@ -216,7 +216,7 @@
           {
             "name": "TestSprite.SRC",
             "type": "SpriteRendererComponent",
-            "sprite": "red"
+            "sprite": "yellow"
           }
         ],
         "children": []
