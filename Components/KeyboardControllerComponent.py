@@ -11,13 +11,13 @@ class KeyboardControllerComponent(py3dengine.Component):
     def update(self, dt):
         x = 0
         z = 0
-        if py3dinput.key_is_pressed('a'):
+        if py3dinput.is_key_pressed('a'):
             x = x - 1
-        if py3dinput.key_is_pressed('d'):
+        if py3dinput.is_key_pressed('d'):
             x = x + 1
-        if py3dinput.key_is_pressed('s'):
+        if py3dinput.is_key_pressed('s'):
             z = z - 1
-        if py3dinput.key_is_pressed('w'):
+        if py3dinput.is_key_pressed('w'):
             z = z + 1
 
         displacement = py3dmath.Vector3(x, 0, z)
