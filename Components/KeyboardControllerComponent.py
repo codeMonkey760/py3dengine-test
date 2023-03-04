@@ -28,7 +28,7 @@ class KeyboardControllerComponent(py3dengine.Component):
         displacement = displacement * self.speed
 
         transform = self.get_owner().get_transform()
-        transform.move(dir)
+        transform.move(displacement)
 
     def parse(self, values, resource_manager):
         self.speed = float(values['speed'])
