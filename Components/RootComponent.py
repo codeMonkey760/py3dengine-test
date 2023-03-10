@@ -1,6 +1,5 @@
 import py3dengine
 import py3dinput
-import py3dlogger
 
 
 class RootComponent(py3dengine.Component):
@@ -11,14 +10,10 @@ class RootComponent(py3dengine.Component):
         self.timeSinceStateChange = 0.0
         self.targets = {}
 
-        py3dinput.set_key_callback(self.on_q_pressed, 81, 1, 0)
         py3dinput.set_key_callback(self.on_q_released, 81, 0, 0)
 
     def on_q_released(self):
-        py3dlogger.info('[Root]: Q key was released')
-
-    def on_q_pressed(self):
-        py3dlogger.info('[Root]: Q key was pressed')
+        py3dengine.quit()
 
     def update(self, dt):
         self.timeSinceStateChange = self.timeSinceStateChange + dt
