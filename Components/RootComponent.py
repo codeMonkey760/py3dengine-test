@@ -1,4 +1,5 @@
 import py3dengine
+import py3dinput
 
 
 class RootComponent(py3dengine.Component):
@@ -8,6 +9,16 @@ class RootComponent(py3dengine.Component):
         self.stateChangeTimeout = 1.0
         self.timeSinceStateChange = 0.0
         self.targets = {}
+
+        py3dinput.set_key_callback(
+            self.q_key,
+            81,
+            0,
+            0
+        )
+
+    def q_key(self):
+        print('Q key was released')
 
     def update(self, dt):
         self.timeSinceStateChange = self.timeSinceStateChange + dt
