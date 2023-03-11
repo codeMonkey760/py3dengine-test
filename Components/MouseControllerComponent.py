@@ -32,6 +32,7 @@ class MouseControllerComponent(Component):
 
         orientation = transform.get_orientation()
         rightV = Vector3(1.0, 0.0, 0.0) * orientation
+        print(rightV)
         pitch = Quaternion.FromAxisAndDegrees(rightV, delta[1] * self.y_sens)
 
         transform.rotate(pitch)
