@@ -198,7 +198,9 @@
           },
           {
             "name": "Camera.MCC",
-            "type": "MouseControllerComponent"
+            "type": "MouseControllerComponent",
+            "x_sensitivity": 0.25,
+            "y_sensitivity": 0.25
           }
         ],
         "children": []
