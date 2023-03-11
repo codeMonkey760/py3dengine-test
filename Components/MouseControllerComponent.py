@@ -27,13 +27,14 @@ class MouseControllerComponent(Component):
         if transform is None:
             return
 
+        yaw = Quaternion.FromAxisAndDegrees(Vector3(0.0, 1.0, 0.0), delta[0] * self.x_sens)
+        transform.rotate(yaw)
+
         orientation = transform.get_orientation()
         rightV = Vector3(1.0, 0.0, 0.0) * orientation
-
         pitch = Quaternion.FromAxisAndDegrees(rightV, delta[1] * self.y_sens)
-        yaw = Quaternion.FromAxisAndDegrees(Vector3(0.0, 1.0, 0.0), delta[0] * self.x_sens)
 
-        transform.rotate((yaw * pitch))
+        transform.rotate(pitch)
 
     def parse(self, values, resource_manager):
         self.x_sens = values['x_sensitivity']
