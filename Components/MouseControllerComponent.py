@@ -1,9 +1,9 @@
-import py3dengine
-import py3dinput
+from py3dengine import Component
+from py3dinput import get_cursor_pos
 from py3dmath import Quaternion, Vector3
 
 
-class MouseControllerComponent(py3dengine.Component):
+class MouseControllerComponent(Component):
     def __init__(self):
         super().__init__(self)
         self.x_sens = 1.0
@@ -11,7 +11,7 @@ class MouseControllerComponent(py3dengine.Component):
         self.last_pos = None
 
     def update(self, dt):
-        cur_pos = py3dinput.get_cursor_pos()
+        cur_pos = get_cursor_pos()
 
         if self.last_pos is None:
             self.last_pos = cur_pos
