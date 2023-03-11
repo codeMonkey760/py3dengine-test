@@ -30,7 +30,7 @@ class MouseControllerComponent(py3dengine.Component):
         pitch = Quaternion.FromAxisAndDegrees(Vector3(1.0, 0.0, 0.0), delta[1] * self.y_sens)
         yaw = Quaternion.FromAxisAndDegrees(Vector3(0.0, 1.0, 0.0), delta[0] * self.x_sens)
 
-        transform.set_orientation((pitch * yaw))
+        transform.rotate((pitch * yaw))
 
     def parse(self, values, resource_manager):
         self.x_sens = values['x_sensitivity']
