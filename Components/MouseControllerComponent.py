@@ -37,7 +37,7 @@ class MouseControllerComponent(Component):
 
         yaw = Quaternion.FromAxisAndDegrees(Vector3(0.0, 1.0, 0.0), self.__current_yaw)
         pitch = Quaternion.FromAxisAndDegrees(Vector3(1.0, 0.0, 0.0), self.__current_pitch)
-        transform.set_orientation(pitch * yaw)
+        transform.set_orientation(yaw * pitch)
 
     def parse(self, values, resource_manager):
         self.x_sens = values['x_sensitivity']
