@@ -200,7 +200,9 @@
             "name": "Camera.MCC",
             "type": "MouseControllerComponent",
             "x_sensitivity": 0.25,
-            "y_sensitivity": 0.25
+            "y_sensitivity": 0.25,
+            "yaw": 0.0,
+            "pitch": 0.0
           }
         ],
         "children": []

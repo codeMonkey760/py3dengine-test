@@ -6,6 +6,8 @@ from py3dmath import Quaternion, Vector3
 class MouseControllerComponent(Component):
     def __init__(self):
         super().__init__(self)
+        self.__current_yaw = 0.0
+        self.__current_pitch = 0.0
         self.x_sens = 1.0
         self.y_sens = 1.0
         self.last_pos = None
@@ -17,8 +19,14 @@ class MouseControllerComponent(Component):
             self.last_pos = cur_pos
             return
 
-        delta = (cur_pos[0] - self.last_pos[0], cur_pos[1] - self.last_pos[1])
+        self.__current_yaw = self.__current_yaw + ((cur_pos[0] - self.last_pos[0]) * self.x_sens)
+        self.__current_pitch = self.__current_pitch + ((cur_pos[1] - self.last_pos[1]) * self.y_sens)
         self.last_pos = cur_pos
+
+        if self.__current_pitch < -88.0:
+            self.__current_pitch = -88.0
+        if self.__current_pitch > 88.0:
+            self.__current_pitch = 88.0
 
         try:
             transform = self.get_owner().get_transform()
@@ -27,16 +35,12 @@ class MouseControllerComponent(Component):
         if transform is None:
             return
 
-        yaw = Quaternion.FromAxisAndDegrees(Vector3(0.0, 1.0, 0.0), delta[0] * self.x_sens)
-        transform.rotate(yaw)
-
-        orientation = transform.get_orientation()
-        rightV = Vector3(1.0, 0.0, 0.0) * orientation
-        print(rightV)
-        pitch = Quaternion.FromAxisAndDegrees(rightV, delta[1] * self.y_sens)
-
-        transform.rotate(pitch)
+        yaw = Quaternion.FromAxisAndDegrees(Vector3(0.0, 1.0, 0.0), self.__current_yaw)
+        pitch = Quaternion.FromAxisAndDegrees(Vector3(1.0, 0.0, 0.0), self.__current_pitch)
+        transform.set_orientation(pitch * yaw)
 
     def parse(self, values, resource_manager):
         self.x_sens = values['x_sensitivity']
         self.y_sens = values['y_sensitivity']
+        self.__current_yaw = values['yaw']
+        self.__current_pitch = values['pitch']
