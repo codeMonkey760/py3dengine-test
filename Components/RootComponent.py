@@ -11,6 +11,7 @@ class RootComponent(py3dengine.Component):
         self.targets = {}
 
         py3dinput.set_key_callback(self.on_q_released, 81, 0, 0)
+        py3dinput.set_cursor_mode("DISABLED")
 
     def on_q_released(self):
         py3dengine.quit()
