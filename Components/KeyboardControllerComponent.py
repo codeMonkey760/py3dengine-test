@@ -28,7 +28,14 @@ class KeyboardControllerComponent(py3dengine.Component):
 
         displacement = displacement * self.speed
 
-        transform = self.get_owner().get_transform()
+        try:
+            transform = self.get_owner().get_transform()
+        except AttributeError:
+            transform = None
+        if transform is None:
+            return
+
+        displacement = displacement * transform.get_orientation()
         transform.move(displacement)
 
     def parse(self, values, resource_manager):
