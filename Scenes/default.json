@@ -41,10 +41,10 @@
     ],
     "children": [
       {
-        "name": "Cube",
+        "name": "Cube1",
         "transform": {
           "position": {
-            "x": -3.0,
+            "x": -1.25,
             "y": 0.0,
             "z": 2.0
           },
@@ -62,62 +62,58 @@
         },
         "components": [
           {
-            "name": "Cube.MRC",
+            "name": "Cube1.MRC",
             "type": "ModelRendererComponent",
             "model": "Cube",
             "shader": "general_pnt",
-            "material": "SolidBlue"
+            "material": "SolidRed"
+          }
+        ],
+        "children": []
+      },
+      {
+        "name": "Cube2",
+        "transform": {
+          "position": {
+            "x": 1.25,
+            "y": 0.0,
+            "z": 2.0
+          },
+          "orientation": {
+            "x": 0.22,
+            "y": 0.22,
+            "z": 0.22,
+            "w": 0.92
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        "components": [
+          {
+            "name": "Cube2.MRC",
+            "type": "ModelRendererComponent",
+            "model": "Cube",
+            "shader": "general_pnt",
+            "material": "SolidRed"
           },
           {
-            "name": "Cube.RC",
+            "name": "Cube2.RC",
             "type": "RotationComponent",
             "axis": {
               "x": 1.0,
               "y": 0.0,
               "z": 0.0
             },
-            "speed": 45.0
-          }
-        ],
-        "children": []
-      },
-      {
-        "name": "Pyramid",
-        "transform": {
-          "position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 2.0
-          },
-          "orientation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "scale": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
-          }
-        },
-        "components": [
-          {
-            "name": "Pyramid.MRC",
-            "type": "ModelRendererComponent",
-            "model": "Pyramid",
-            "shader": "general_pnt",
-            "material": "SolidYellow"
+            "speed": 11.25
           },
           {
-            "name": "Pyramid.RC",
-            "type": "RotationComponent",
-            "axis": {
-              "x": 0.0,
-              "y": 1.0,
-              "z": 0.0
-            },
-            "speed": 25.0
+            "name": "Cube2.BoxCollider",
+            "type": "ColliderComponent",
+            "shape": "BOX",
+            "args": [2.0, 2.0, 2.0]
           }
         ],
         "children": []
