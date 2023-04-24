@@ -123,47 +123,6 @@
         "children": []
       },
       {
-        "name": "Quad",
-        "transform": {
-          "position": {
-            "x": 3.0,
-            "y": 0.0,
-            "z": 2.0
-          },
-          "orientation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "scale": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
-          }
-        },
-        "components": [
-          {
-            "name": "Quad.MRC",
-            "type": "ModelRendererComponent",
-            "model": "Quad",
-            "shader": "general_pnt",
-            "material": "SolidRed"
-          },
-          {
-            "name": "Quad.RC",
-            "type": "RotationComponent",
-            "axis": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 1.0
-            },
-            "speed": 90.0
-          }
-        ],
-        "children": []
-      },
-      {
         "name": "Camera",
         "transform": {
           "position": {
@@ -203,35 +162,6 @@
             "y_sensitivity": 0.25,
             "yaw": 0.0,
             "pitch": 0.0
-          }
-        ],
-        "children": []
-      },
-      {
-        "name": "TestSprite",
-        "transform": {
-          "position": {
-            "x": 0.0,
-            "y": 2.0,
-            "z": 2.0
-          },
-          "orientation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "scale": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
-          }
-        },
-        "components": [
-          {
-            "name": "TestSprite.SRC",
-            "type": "SpriteRendererComponent",
-            "sprite": "yellow"
           }
         ],
         "children": []
