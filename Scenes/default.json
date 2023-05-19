@@ -42,12 +42,12 @@
     ],
     "children": [
       {
-        "name": "Cube1",
+        "name": "Anvil",
         "transform": {
           "position": {
-            "x": -1.25,
+            "x": 0.0,
             "y": 0.0,
-            "z": 2.0
+            "z": 0.0
           },
           "orientation": {
             "x": 0.0,
@@ -63,74 +63,69 @@
         },
         "components": [
           {
-            "name": "Cube1.MRC",
+            "name": "Anvil.MRC",
             "type": "ModelRendererComponent",
             "model": "Cube",
             "shader": "general_pnt",
             "material": "SolidRed"
           },
           {
-            "name": "Cube1.BoxCollider",
+            "name": "Anvil.BoxCollider",
             "type": "ColliderComponent",
             "shape": "BOX",
             "args": [2.0, 2.0, 2.0],
             "is_trigger": true
           },
           {
-            "name": "Cube2.ColliderLogger",
+            "name": "Anvil.ColliderLogger",
             "type": "CollisionLoggerComponent"
           }
         ],
         "children": []
       },
       {
-        "name": "Cube2",
+        "name": "Hammer",
         "transform": {
           "position": {
-            "x": 1.25,
+            "x": 2.0,
             "y": 0.0,
-            "z": 2.0
+            "z": 0.0
           },
           "orientation": {
-            "x": 0.22,
-            "y": 0.22,
-            "z": 0.22,
-            "w": 0.92
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
           },
           "scale": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
+            "x": 2.0,
+            "y": 0.5,
+            "z": 0.05
           }
         },
         "components": [
           {
-            "name": "Cube2.MRC",
+            "name": "Hammer.MRC",
             "type": "ModelRendererComponent",
             "model": "Cube",
             "shader": "general_pnt",
             "material": "SolidRed"
           },
           {
-            "name": "Cube2.RC",
-            "type": "RotationComponent",
-            "axis": {
-              "x": 1.0,
-              "y": 0.0,
-              "z": 0.0
-            },
-            "speed": 11.25
-          },
-          {
-            "name": "Cube2.BoxCollider",
+            "name": "Hammer.BoxCollider",
             "type": "ColliderComponent",
             "shape": "BOX",
-            "args": [2.0, 2.0, 2.0],
+            "args": [4.0, 1.0, 0.1],
             "is_trigger": true
           },
           {
-            "name": "Cube2.ColliderLogger",
+            "name": "Hammer.ColliderLogger",
             "type": "CollisionLoggerComponent"
+          },
+          {
+            "name": "Hammer.KCC",
+            "type": "KeyboardControllerComponent",
+            "speed": 0.01
           }
         ],
         "children": []
@@ -141,7 +136,7 @@
           "position": {
             "x": 0.0,
             "y": 0.0,
-            "z": -2.0
+            "z": -4.0
           },
           "orientation": {
             "x": 0.0,
@@ -166,7 +161,7 @@
           {
             "name": "Camera.KCC",
             "type": "KeyboardControllerComponent",
-            "speed": 0.1
+            "speed": 0.05
           },
           {
             "name": "Camera.MCC",
