@@ -81,7 +81,9 @@
             "type": "CollisionLoggerComponent"
           }
         ],
-        "children": []
+        "children": [],
+        "enabled": true,
+        "visible": false
       },
       {
         "name": "Hammer",
