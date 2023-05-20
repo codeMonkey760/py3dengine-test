@@ -67,7 +67,8 @@
             "type": "ModelRendererComponent",
             "model": "Cube",
             "shader": "general_pnt",
-            "material": "SolidRed"
+            "material": "SolidRed",
+            "visible": false
           },
           {
             "name": "Anvil.BoxCollider",
@@ -127,7 +128,8 @@
           {
             "name": "Hammer.KCC",
             "type": "KeyboardControllerComponent",
-            "speed": 0.01
+            "speed": 0.01,
+            "enabled": false
           }
         ],
         "children": []
