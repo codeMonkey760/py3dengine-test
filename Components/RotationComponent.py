@@ -4,7 +4,7 @@ from py3dmath import Vector3, Quaternion
 
 class RotationComponent(py3dengine.Component):
     def __init__(self):
-        super().__init__(self)
+        super().__init__()
         self.speed = 0.0
         self.axis = Vector3(0, 0, 1)
 
@@ -15,7 +15,7 @@ class RotationComponent(py3dengine.Component):
         transform.rotate(displacement)
 
     def parse(self, values, resource_manager):
-        super().parse(self, values, resource_manager)
+        super().parse(values, resource_manager)
 
         self.speed = float(values['speed'])
         x = float(values['axis']['x'])

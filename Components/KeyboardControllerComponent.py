@@ -5,7 +5,7 @@ import py3dmath
 
 class KeyboardControllerComponent(py3dengine.Component):
     def __init__(self):
-        super().__init__(self)
+        super().__init__()
         self.speed = 1
 
     def update(self, dt):
@@ -44,6 +44,6 @@ class KeyboardControllerComponent(py3dengine.Component):
         transform.move(displacement)
 
     def parse(self, values, resource_manager):
-        super().parse(self, values, resource_manager)
+        super().parse(values, resource_manager)
 
         self.speed = float(values['speed'])

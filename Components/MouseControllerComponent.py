@@ -5,7 +5,7 @@ from py3dmath import Quaternion, Vector3
 
 class MouseControllerComponent(Component):
     def __init__(self):
-        super().__init__(self)
+        super().__init__()
         self.__current_yaw = 0.0
         self.__current_pitch = 0.0
         self.x_sens = 1.0
@@ -40,7 +40,7 @@ class MouseControllerComponent(Component):
         transform.set_orientation(yaw * pitch)
 
     def parse(self, values, resource_manager):
-        super().parse(self, values, resource_manager)
+        super().parse(values, resource_manager)
 
         self.x_sens = values['x_sensitivity']
         self.y_sens = values['y_sensitivity']

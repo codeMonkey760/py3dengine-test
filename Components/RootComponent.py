@@ -5,7 +5,7 @@ from KeyboardControllerComponent import KeyboardControllerComponent
 
 class RootComponent(py3dengine.Component):
     def __init__(self):
-        super().__init__(self)
+        super().__init__()
 
         self.camera = None
         self.hammer = None
