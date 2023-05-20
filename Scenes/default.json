@@ -83,7 +83,7 @@
         ],
         "children": [],
         "enabled": true,
-        "visible": false
+        "visible": true
       },
       {
         "name": "Hammer",
