@@ -25,7 +25,7 @@ class RootComponent(py3dengine.Component):
         super().end()
         py3dlogger.info("[RootComponent]: Root says bye")
 
-    def on_q_released():
+    def on_q_released(self):
         py3dengine.quit()
 
     def on_1_released(self):
