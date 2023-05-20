@@ -11,13 +11,16 @@ class MouseControllerComponent(Component):
         self.x_sens = 1.0
         self.y_sens = 1.0
         self.last_pos = None
+        self.transform = None
+
+    def start(self):
+        super().start()
+
+        self.last_pos = get_cursor_pos()
+        self.transform = self.get_owner().get_transform()
 
     def update(self, dt):
         cur_pos = get_cursor_pos()
-
-        if self.last_pos is None:
-            self.last_pos = cur_pos
-            return
 
         self.__current_yaw = self.__current_yaw + ((cur_pos[0] - self.last_pos[0]) * self.x_sens)
         self.__current_pitch = self.__current_pitch + ((cur_pos[1] - self.last_pos[1]) * self.y_sens)
@@ -28,16 +31,9 @@ class MouseControllerComponent(Component):
         if self.__current_pitch > 88.0:
             self.__current_pitch = 88.0
 
-        try:
-            transform = self.get_owner().get_transform()
-        except AttributeError:
-            transform = None
-        if transform is None:
-            return
-
         yaw = Quaternion.FromAxisAndDegrees(Vector3(0.0, 1.0, 0.0), self.__current_yaw)
         pitch = Quaternion.FromAxisAndDegrees(Vector3(1.0, 0.0, 0.0), self.__current_pitch)
-        transform.set_orientation(yaw * pitch)
+        self.transform.set_orientation(yaw * pitch)
 
     def parse(self, values, resource_manager):
         super().parse(values, resource_manager)
