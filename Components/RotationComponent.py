@@ -15,6 +15,8 @@ class RotationComponent(py3dengine.Component):
         transform.rotate(displacement)
 
     def parse(self, values, resource_manager):
+        super().parse(self, values, resource_manager)
+
         self.speed = float(values['speed'])
         x = float(values['axis']['x'])
         y = float(values['axis']['y'])

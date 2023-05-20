@@ -44,4 +44,6 @@ class KeyboardControllerComponent(py3dengine.Component):
         transform.move(displacement)
 
     def parse(self, values, resource_manager):
+        super().parse(self, values, resource_manager)
+
         self.speed = float(values['speed'])

@@ -40,6 +40,8 @@ class MouseControllerComponent(Component):
         transform.set_orientation(yaw * pitch)
 
     def parse(self, values, resource_manager):
+        super().parse(self, values, resource_manager)
+
         self.x_sens = values['x_sensitivity']
         self.y_sens = values['y_sensitivity']
         self.__current_yaw = values['yaw']
