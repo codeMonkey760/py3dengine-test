@@ -68,7 +68,7 @@
             "model": "Cube",
             "shader": "general_pnt",
             "material": "SolidRed",
-            "visible": false
+            "visible": true
           },
           {
             "name": "Anvil.BoxCollider",
@@ -165,7 +165,8 @@
           {
             "name": "Camera.KCC",
             "type": "KeyboardControllerComponent",
-            "speed": 0.05
+            "speed": 0.05,
+            "enabled": true
           },
           {
             "name": "Camera.MCC",
