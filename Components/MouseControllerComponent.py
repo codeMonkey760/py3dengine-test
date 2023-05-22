@@ -35,8 +35,6 @@ class MouseControllerComponent(Component):
         pitch = Quaternion.FromAxisAndDegrees(Vector3(1.0, 0.0, 0.0), self.__current_pitch)
         self.transform.set_orientation(yaw * pitch)
 
-        print(self.transform.get_position())
-
     def parse(self, values, resource_manager):
         super().parse(values, resource_manager)
 
