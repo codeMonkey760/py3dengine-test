@@ -1,5 +1,4 @@
 import py3dengine
-import py3dinput
 import py3dlogger
 from KeyboardControllerComponent import KeyboardControllerComponent
 
@@ -14,9 +13,11 @@ class RootComponent(py3dengine.Component):
     def start(self):
         super().start()
         py3dlogger.info("[RootComponent]: Root says hi")
-        py3dinput.set_key_callback(self.on_q_released, 81, 0, 0)
-        py3dinput.set_key_callback(self.on_1_released, 49, 0, 0)
-        py3dinput.set_key_callback(self.on_2_released, 50, 0, 0)
+
+        scene = self.get_owner().get_scene()
+        scene.set_key_callback(self.on_q_released, 81, 0, 0)
+        scene.set_key_callback(self.on_1_released, 49, 0, 0)
+        scene.set_key_callback(self.on_2_released, 50, 0, 0)
         self.camera = self.get_owner().get_child_by_name("Camera").get_component_by_type(KeyboardControllerComponent)
         self.hammer = self.get_owner().get_child_by_name("Hammer").get_component_by_type(KeyboardControllerComponent)
 
