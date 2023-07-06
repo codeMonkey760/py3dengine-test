@@ -1,4 +1,5 @@
 {
+  "name": "CollisionDetectionTest",
   "active_camera": "Camera",
   "resources": [
     "Components/CameraComponent.json",
