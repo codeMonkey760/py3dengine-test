@@ -29,8 +29,6 @@ class RootComponent(py3dengine.Component):
         py3dengine.quit()
 
     def on_1_released(self):
-        raise py3dengine.SceneActivationException("AAAHHH!!!!")
-
         self.camera.enable(True)
         self.hammer.enable(False)
 
