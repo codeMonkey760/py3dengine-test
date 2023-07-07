@@ -22,6 +22,8 @@ class RootComponent(py3dengine.Component):
         self.camera = self.get_owner().get_child_by_name("Camera").get_component_by_type(KeyboardControllerComponent)
         self.hammer = self.get_owner().get_child_by_name("Hammer").get_component_by_type(KeyboardControllerComponent)
 
+        py3dengine.load_scene('Scenes/Scene2.json')
+
     def end(self):
         super().end()
         py3dlogger.info("[RootComponent]: Root says bye")
