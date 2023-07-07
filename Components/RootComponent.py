@@ -1,5 +1,6 @@
 import py3dengine
 import py3dlogger
+from py3dexceptions import SceneActivationException
 from KeyboardControllerComponent import KeyboardControllerComponent
 
 
@@ -29,6 +30,8 @@ class RootComponent(py3dengine.Component):
         py3dengine.quit()
 
     def on_1_released(self):
+        raise SceneActivationException("AAAHHH!!!!")
+
         self.camera.enable(True)
         self.hammer.enable(False)
 
