@@ -42,5 +42,5 @@ class RootComponent(py3dengine.Component):
     def on_3_released(self):
         try:
             py3dengine.activate_scene("Scene2")
-        except py3dengine.SceneActivationException as err:
+        except py3dengine.SceneError as err:
             py3dlogger.warning("Could not activate Scene2 " + str(err))
