@@ -4,21 +4,39 @@ in vec3 posW;
 in vec3 normW;
 in vec2 texCoord;
 
-uniform vec3 gDiffuseColor;
-uniform vec3 gCamPos;
-uniform sampler2D gDiffuseMap;
-
 layout(location = 0) out vec4 outputColor;
+
+uniform vec3 gCamPos;
+
+uniform vec3 gDiffuseLight;
+uniform vec3 gSpecLight;
+uniform vec3 gAmbientLight;
+uniform float gSpecPower;
+uniform float gLightInt;
+uniform vec3 gLightAtt;
+uniform vec3 gLightPos;
+
+uniform sampler2D gDiffuseMap;
+uniform vec3 gSpecMaterial;
+uniform vec3 gAmbientMaterial;
 
 void main() {
     vec3 normWFixed = normalize(normW);
-    vec3 toCamera = normalize(gCamPos - posW);
+    vec3 diffuseMaterial = texture(gDiffuseMap, texCoord).rgb;
 
-    float lightValue = max(dot(toCamera, normWFixed), 0.0f);
-    lightValue = (lightValue * 0.7f) + 0.3f;
+    float distance = distance(gLightPos, posW);
+    float att = gLightInt / (gLightAtt.x + gLightAtt.y * distance + gLightAtt.z * distance * distance);
 
-    vec3 mapColor = texture(gDiffuseMap, texCoord).rgb;
-    vec4 diffuseColor = vec4(mapColor * gDiffuseColor * lightValue, 1.0f);
+    vec3 toLight = normalize(gLightPos - posW);
+    float diffuseLight = max(dot(toLight, normWFixed), 0.0f);
+    vec4 diffuseColor = vec4((diffuseMaterial * gDiffuseLight) * diffuseLight, 1.0f);
 
-    outputColor = diffuseColor;
+    vec3 toEye = normalize(gCamPos - posW);
+    vec3 r = reflect(-toLight, normW);
+    float t = pow(max(dot(r, toEye), 0.0f), gSpecPower);
+    vec4 specColor = vec4((gSpecMaterial * gSpecLight) * t, 1.0f);
+
+    vec4 ambientColor = vec4((diffuseMaterial * gAmbientMaterial) * gAmbientLight, 1.0f);
+
+    outputColor = ((diffuseColor + specColor) * att) + ambientColor;
 }
