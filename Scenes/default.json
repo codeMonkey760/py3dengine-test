@@ -8,9 +8,11 @@
     "Components/KeyboardControllerComponent.json",
     "Components/MouseControllerComponent.json",
     "Components/CollisionLoggerComponent.json",
+    "Components/HudComponent.json",
     "Shaders/general_pnt.json",
     "Textures/test_pattern_linear.json",
     "Textures/test_pattern_point.json",
+    "Textures/charmap.json",
     "Meshes/solid_objs.obj",
     "Materials/solid_objs.mtl",
     "Sprites/sprite-sheet-test.json"
@@ -179,6 +181,50 @@
           }
         ],
         "children": []
+      },
+      {
+        "name": "Hud",
+        "transform": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        "components": [
+          {
+            "name": "Hud.Instructions",
+            "type": "TextRendererComponent",
+            "text": "Use mouse to move camera\nUse WASD keys to move selected object\nUse 1 and 2 to select camera and hammer\nUse 3 to load next scene\nUse Q to quit",
+            "color": [0.4, 1.0, 0.4, 1.0],
+            "justify": "left"
+          },
+          {
+            "name": "Hud.Stats",
+            "type": "TextRendererComponent",
+            "text": "REPORT THIS TEXT AS BUG",
+            "color": [1.0, 0.4, 0.4, 1.0],
+            "justify": "right"
+          },
+          {
+            "name": "Hud.HC",
+            "type": "HudComponent"
+          }
+        ],
+        "children": [],
+        "enabled": true,
+        "visible": true
       }
     ]
   }
