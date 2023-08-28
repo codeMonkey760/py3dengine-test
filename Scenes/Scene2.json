@@ -5,6 +5,7 @@
     "Components/Scene2RootComponent.json",
     "Components/CameraComponent.json",
     "Components/RotationComponent.json",
+    "Components/HudComponent.json",
     "Shaders/general_pnt.json",
     "Textures/test_pattern_linear.json",
     "Textures/test_pattern_point.json",
@@ -113,6 +114,50 @@
           }
         ],
         "children": []
+      },
+      {
+        "name": "Hud",
+        "transform": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "orientation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 1.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        "components": [
+          {
+            "name": "Hud.Instructions",
+            "type": "TextRendererComponent",
+            "text": "Use Q to quit",
+            "color": [0.4, 1.0, 0.4, 1.0],
+            "justify": "left"
+          },
+          {
+            "name": "Hud.Stats",
+            "type": "TextRendererComponent",
+            "text": "REPORT THIS TEXT AS BUG",
+            "color": [1.0, 0.4, 0.4, 1.0],
+            "justify": "right"
+          },
+          {
+            "name": "Hud.HC",
+            "type": "HudComponent"
+          }
+        ],
+        "children": [],
+        "enabled": true,
+        "visible": true
       }
     ]
   }
