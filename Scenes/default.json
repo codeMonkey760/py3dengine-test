@@ -215,8 +215,7 @@
             "type": "TextRendererComponent",
             "text": "REPORT THIS TEXT AS BUG",
             "color": [1.0, 0.4, 0.4, 1.0],
-            "justify": "right",
-            "background": [1.0, 1.0, 0.0, 1.0]
+            "justify": "right"
           },
           {
             "name": "Hud.HC",
