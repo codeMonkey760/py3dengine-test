@@ -15,24 +15,6 @@
   ],
   "scene_root": {
     "name": "Root",
-    "transform": {
-      "position": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      },
-      "orientation": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 1.0
-      },
-      "scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0
-      }
-    },
     "components": [
       {
         "name": "Root.S2RC",
@@ -42,24 +24,6 @@
     "children": [
       {
         "name": "Cube",
-        "transform": {
-          "position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "orientation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "scale": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
-          }
-        },
         "components": [
           {
             "name": "Cube.MRC",
@@ -86,23 +50,21 @@
       },
       {
         "name": "Camera",
-        "transform": {
-          "position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": -4.0
-          },
-          "orientation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "scale": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
-          }
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": -4.0
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "components": [
           {
@@ -117,24 +79,6 @@
       },
       {
         "name": "Hud",
-        "transform": {
-          "position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "orientation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "scale": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
-          }
-        },
         "components": [
           {
             "name": "Hud.Instructions",
