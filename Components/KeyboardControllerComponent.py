@@ -35,7 +35,7 @@ class KeyboardControllerComponent(py3dengine.Component):
         except ZeroDivisionError:
             return
 
-        displacement = displacement * self.speed
+        displacement = displacement * (self.speed * dt)
 
         displacement = displacement * self.owner.get_orientation()
         self.owner.move(displacement)

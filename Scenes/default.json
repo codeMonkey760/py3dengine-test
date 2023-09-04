@@ -101,7 +101,7 @@
           {
             "name": "Hammer.KCC",
             "type": "KeyboardControllerComponent",
-            "speed": 0.01,
+            "speed": 1.0,
             "enabled": false
           }
         ],
@@ -136,7 +136,7 @@
           {
             "name": "Camera.KCC",
             "type": "KeyboardControllerComponent",
-            "speed": 0.05,
+            "speed": 5.0,
             "enabled": true
           },
           {
