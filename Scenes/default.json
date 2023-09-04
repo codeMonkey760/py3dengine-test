@@ -41,6 +41,14 @@
       {
         "name": "Root.RC",
         "type": "RootComponent"
+      },
+      {
+        "name": "Root.SelectedObject",
+        "type": "TextRendererComponent",
+        "text": "REPORT THIS TEXT AS BUG",
+        "color": [0.4, 0.4, 1.0, 1.0],
+        "justify": "left",
+        "margin": [106.0, 0.0, 0.0, 10.0]
       }
     ],
     "children": [
