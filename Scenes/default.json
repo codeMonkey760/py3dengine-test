@@ -47,7 +47,7 @@
           },
           {
             "name": "Anvil.BoxCollider",
-            "type": "ColliderComponent",
+            "type": "RigidBodyComponent",
             "shape": "BOX",
             "args": [2.0, 2.0, 2.0],
             "is_trigger": true
@@ -89,7 +89,7 @@
           },
           {
             "name": "Hammer.BoxCollider",
-            "type": "ColliderComponent",
+            "type": "RigidBodyComponent",
             "shape": "BOX",
             "args": [4.0, 1.0, 0.1],
             "is_trigger": true
