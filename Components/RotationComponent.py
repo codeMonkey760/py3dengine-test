@@ -7,14 +7,14 @@ class RotationComponent(py3dengine.Component):
         super().__init__()
         self.speed = 0.0
         self.axis = Vector3(0, 0, 1)
-        self.transform = None
+        self.owner = None
 
     def start(self):
-        self.transform = self.get_owner().get_transform()
+        self.owner = self.get_owner()
 
     def update(self, dt):
         displacement = Quaternion.FromAxisAndDegrees(self.axis, self.speed * dt)
-        self.transform.rotate(displacement)
+        self.owner.rotate(displacement)
 
     def parse(self, values, resource_manager):
         super().parse(values, resource_manager)
