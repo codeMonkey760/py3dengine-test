@@ -11,13 +11,13 @@ class MouseControllerComponent(Component):
         self.x_sens = 1.0
         self.y_sens = 1.0
         self.last_pos = None
-        self.transform = None
+        self.owner = None
 
     def start(self):
         super().start()
 
         self.last_pos = get_cursor_pos()
-        self.transform = self.get_owner().get_transform()
+        self.owner = self.get_owner()
 
     def update(self, dt):
         cur_pos = get_cursor_pos()
@@ -33,7 +33,7 @@ class MouseControllerComponent(Component):
 
         yaw = Quaternion.FromAxisAndDegrees(Vector3(0.0, 1.0, 0.0), self.__current_yaw)
         pitch = Quaternion.FromAxisAndDegrees(Vector3(1.0, 0.0, 0.0), self.__current_pitch)
-        self.transform.set_orientation(yaw * pitch)
+        self.owner.set_orientation(yaw * pitch)
 
     def parse(self, values, resource_manager):
         super().parse(values, resource_manager)

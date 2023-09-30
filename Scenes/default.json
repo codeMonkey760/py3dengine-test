@@ -19,24 +19,6 @@
   ],
   "scene_root": {
     "name": "root",
-    "transform": {
-      "position": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      },
-      "orientation": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0,
-        "w": 1.0
-      },
-      "scale": {
-        "x": 1.0,
-        "y": 1.0,
-        "z": 1.0
-      }
-    },
     "components": [
       {
         "name": "Root.RC",
@@ -54,24 +36,6 @@
     "children": [
       {
         "name": "Anvil",
-        "transform": {
-          "position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "orientation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "scale": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
-          }
-        },
         "components": [
           {
             "name": "Anvil.MRC",
@@ -83,7 +47,7 @@
           },
           {
             "name": "Anvil.BoxCollider",
-            "type": "ColliderComponent",
+            "type": "RigidBodyComponent",
             "shape": "BOX",
             "args": [2.0, 2.0, 2.0],
             "is_trigger": true
@@ -98,24 +62,22 @@
         "visible": true
       },
       {
-        "name": "Hammer",
-        "transform": {
-          "position": {
-            "x": 2.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "orientation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "scale": {
-            "x": 2.0,
-            "y": 0.5,
-            "z": 0.05
-          }
+      "name": "Hammer",
+        "position": {
+          "x": 2.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 2.0,
+          "y": 0.5,
+          "z": 0.05
         },
         "components": [
           {
@@ -127,7 +89,7 @@
           },
           {
             "name": "Hammer.BoxCollider",
-            "type": "ColliderComponent",
+            "type": "RigidBodyComponent",
             "shape": "BOX",
             "args": [4.0, 1.0, 0.1],
             "is_trigger": true
@@ -139,7 +101,7 @@
           {
             "name": "Hammer.KCC",
             "type": "KeyboardControllerComponent",
-            "speed": 0.01,
+            "speed": 1.0,
             "enabled": false
           }
         ],
@@ -147,23 +109,21 @@
       },
       {
         "name": "Camera",
-        "transform": {
-          "position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": -4.0
-          },
-          "orientation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "scale": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
-          }
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": -4.0
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "components": [
           {
@@ -176,7 +136,7 @@
           {
             "name": "Camera.KCC",
             "type": "KeyboardControllerComponent",
-            "speed": 0.05,
+            "speed": 5.0,
             "enabled": true
           },
           {
@@ -192,24 +152,6 @@
       },
       {
         "name": "Hud",
-        "transform": {
-          "position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "orientation": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0,
-            "w": 1.0
-          },
-          "scale": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
-          }
-        },
         "components": [
           {
             "name": "Hud.Instructions",
