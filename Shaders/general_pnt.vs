@@ -15,6 +15,7 @@ out vec2 texCoord;
 void main() {
     posW = (vec4(posL, 1.0f) * gWMtx).xyz;
     normW = (vec4(normL, 0.0f) * gWITMtx).xyz;
+    normW = normalize(normW);
     texCoord = texC;
 
     gl_Position = (vec4(posL, 1.0) * gWVPMtx);
