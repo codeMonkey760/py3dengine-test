@@ -12,7 +12,6 @@ struct Light {
     vec3 diffuse;
     vec3 specular;
     vec3 ambient;
-    float specPower;
     float intensity;
     vec3 attenuation;
     vec3 position;
@@ -23,6 +22,7 @@ struct Material {
     sampler2D diffuse;
     vec3 specular;
     vec3 ambient;
+    float specPower;
 };
 uniform Material gMaterial;
 
