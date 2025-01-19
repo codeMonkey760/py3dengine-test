@@ -39,7 +39,7 @@ void main() {
 
     vec3 toEye = normalize(gCamPos - posW);
     vec3 r = reflect(-toLight, normW);
-    float t = pow(max(dot(r, toEye), 0.0f), gLights[0].specPower);
+    float t = pow(max(dot(r, toEye), 0.0f), gMaterial.specPower);
     vec4 specColor = vec4((gMaterial.specular * gLights[0].specular) * t, 1.0f);
 
     vec4 ambientColor = vec4((diffuseMaterial * gMaterial.ambient) * gLights[0].ambient, 1.0f);
