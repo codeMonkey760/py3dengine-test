@@ -177,6 +177,38 @@
         "children": [],
         "enabled": true,
         "visible": true
+      },
+      {
+        "name": "Light",
+        "position": {
+          "x": 10.0,
+          "y": 10.0,
+          "z": -10.0
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "components": [
+          {
+            "name": "Light.LC",
+            "type": "LightComponent",
+            "lightType": 1,
+            "diffuse": [1.0, 1.0, 1.0],
+            "specular": [1.0, 1.0, 1.0],
+            "ambient": [0.1, 0.1, 0.1],
+            "intensity": 4.0,
+            "attenuation": [0.0, 0.01, 0.01]
+          }
+        ],
+        "children": []
       }
     ]
   }
