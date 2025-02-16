@@ -9,6 +9,7 @@
     "Components/MouseControllerComponent.json",
     "Components/CollisionLoggerComponent.json",
     "Components/HudComponent.json",
+    "Components/StrobeLightComponent.json",
     "Shaders/general_pnt.json",
     "Textures/test_pattern_linear.json",
     "Textures/test_pattern_point.json",
@@ -206,6 +207,10 @@
             "ambient": [0.1, 0.1, 0.1],
             "intensity": 4.0,
             "attenuation": [0.0, 0.01, 0.01]
+          },
+          {
+            "name": "Light.SLC",
+            "type": "StrobeLightComponent"
           }
         ],
         "children": []
