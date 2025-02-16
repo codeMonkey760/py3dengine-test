@@ -7,6 +7,9 @@ class StrobeLightComponent(py3dengine.Component):
 
         self.time = 0.0
         self.state_transition(0)
+        self.light_component = None
+
+    def start(self):
         self.light_component = self.get_owner().get_component_by_type(py3dengine.LightComponent)
 
     def update(self, dt):
