@@ -6,6 +6,7 @@ class StrobeLightComponent(py3dengine.Component):
         super().__init__()
 
         self.time = 0.0
+        self.state = 0
         self.light_component = None
 
     def start(self):
@@ -31,9 +32,13 @@ class StrobeLightComponent(py3dengine.Component):
     def state_transition(self, new_state):
         if new_state == 0:
             self.light_component.set_diffuse_color([1.0, 0.0, 0.0])
+            self.state = 0
         elif new_state == 1:
             self.light_component.set_diffuse_color([0.0, 1.0, 0.0])
+            self.state = 1
         elif new_state == 2:
             self.light_component.set_diffuse_color([0.0, 0.0, 1.0])
+            self.state = 2
         elif new_state == 3:
             self.light_component.set_diffuse_color([1.0, 1.0, 1.0])
+            self.state = 3
