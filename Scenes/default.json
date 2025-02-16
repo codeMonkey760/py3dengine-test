@@ -10,6 +10,7 @@
     "Components/CollisionLoggerComponent.json",
     "Components/HudComponent.json",
     "Components/StrobeLightComponent.json",
+    "Components/OrbitComponent.json",
     "Shaders/general_pnt.json",
     "Textures/test_pattern_linear.json",
     "Textures/test_pattern_point.json",
@@ -212,6 +213,17 @@
             "name": "Light.SLC",
             "type": "StrobeLightComponent",
             "enabled": false
+          },
+          {
+            "name": "Light.OC",
+            "type": "OrbitComponent",
+            "speed": 72.0,
+            "axis": {
+              "x": 0.0,
+              "y": 1.0,
+              "z": 0.0
+            },
+            "radius": 10.0
           }
         ],
         "children": []
