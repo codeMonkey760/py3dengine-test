@@ -210,7 +210,8 @@
           },
           {
             "name": "Light.SLC",
-            "type": "StrobeLightComponent"
+            "type": "StrobeLightComponent",
+            "enabled": false
           }
         ],
         "children": []
