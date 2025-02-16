@@ -5,6 +5,7 @@
   "screen_top": 100,
   "full_screen": false,
   "swap_interval": 1,
+  "max_dynamic_lights": 8,
   "starting_scene": "Scenes/default.json",
   "wfo_reverse_polygons": true
 }
