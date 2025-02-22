@@ -27,6 +27,8 @@ class OrbitComponent(py3dengine.Component):
         self.owner.set_position(displacement)
 
     def parse(self, values, rm):
+        super().parse(values, rm)
+
         self.speed = float(values['speed'])
         self.radius = float(values['radius'])
 
