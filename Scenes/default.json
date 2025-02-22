@@ -181,7 +181,7 @@
         "visible": true
       },
       {
-        "name": "Light",
+        "name": "RedLight",
         "position": {
           "x": 10.0,
           "y": 10.0,
@@ -200,30 +200,78 @@
         },
         "components": [
           {
-            "name": "Light.LC",
+            "name": "RedLight.LC",
             "type": "LightComponent",
             "lightType": 1,
-            "diffuse": [1.0, 1.0, 1.0],
-            "specular": [1.0, 1.0, 1.0],
-            "ambient": [0.1, 0.1, 0.1],
+            "diffuse": [1.0, 0.1, 0.1],
+            "specular": [1.0, 0.1, 0.1],
+            "ambient": [0.0, 0.0, 0.0],
             "intensity": 4.0,
             "attenuation": [0.0, 0.01, 0.01]
-          },
+          }
+        ],
+        "children": []
+      },
+      {
+        "name": "GreenLight",
+        "position": {
+          "x": 0.0,
+          "y": 10.0,
+          "z": -10.0
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "components": [
           {
-            "name": "Light.SLC",
-            "type": "StrobeLightComponent",
-            "enabled": false
-          },
+            "name": "GreenLight.LC",
+            "type": "LightComponent",
+            "lightType": 1,
+            "diffuse": [0.1, 1.0, 0.1],
+            "specular": [0.1, 1.0, 0.1],
+            "ambient": [0.0, 0.0, 0.0],
+            "intensity": 4.0,
+            "attenuation": [0.0, 0.01, 0.01]
+          }
+        ],
+        "children": []
+      },
+      {
+        "name": "BlueLight",
+        "position": {
+          "x": -10.0,
+          "y": 10.0,
+          "z": -10.0
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "components": [
           {
-            "name": "Light.OC",
-            "type": "OrbitComponent",
-            "speed": 72.0,
-            "axis": {
-              "x": 0.0,
-              "y": 1.0,
-              "z": 0.0
-            },
-            "radius": 10.0
+            "name": "BlueLight.LC",
+            "type": "LightComponent",
+            "lightType": 1,
+            "diffuse": [0.1, 0.1, 1.0],
+            "specular": [0.1, 0.1, 1.0],
+            "ambient": [0.0, 0.0, 0.0],
+            "intensity": 4.0,
+            "attenuation": [0.0, 0.01, 0.01]
           }
         ],
         "children": []
