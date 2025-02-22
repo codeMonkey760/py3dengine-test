@@ -9,6 +9,9 @@ layout(location = 0) out vec4 outputColor;
 uniform vec3 gCamPos;
 
 struct Light {
+    int used;
+    int enabled;
+    int lightType;
     vec3 diffuse;
     vec3 specular;
     vec3 ambient;
@@ -16,7 +19,7 @@ struct Light {
     vec3 attenuation;
     vec3 position;
 };
-uniform Light gLights[1];
+uniform Light gLights[8];
 
 struct Material {
     sampler2D diffuse;
@@ -30,19 +33,27 @@ void main() {
     vec3 normWFixed = normalize(normW);
     vec3 diffuseMaterial = texture(gMaterial.diffuse, texCoord).rgb;
 
-    float distance = distance(gLights[0].position, posW);
-    float att = gLights[0].intensity / (gLights[0].attenuation.x + gLights[0].attenuation.y * distance + gLights[0].attenuation.z * distance * distance);
+    vec3 finalLightColor = vec3(0.0, 0.0, 0.0);
+    for (int curLight = 0; curLight < 8; ++curLight) {
+        if (gLights[curLight].used == 0) break;
 
-    vec3 toLight = normalize(gLights[0].position - posW);
-    float diffuseLight = max(dot(toLight, normWFixed), 0.0f);
-    vec4 diffuseColor = vec4((diffuseMaterial * gLights[0].diffuse) * diffuseLight, 1.0f);
+        if (gLights[curLight].enabled == 0) continue;
 
-    vec3 toEye = normalize(gCamPos - posW);
-    vec3 r = reflect(-toLight, normW);
-    float t = pow(max(dot(r, toEye), 0.0f), gMaterial.specPower);
-    vec4 specColor = vec4((gMaterial.specular * gLights[0].specular) * t, 1.0f);
+        float distance = distance(gLights[curLight].position, posW);
+        float att = gLights[curLight].intensity / (gLights[curLight].attenuation.x + gLights[curLight].attenuation.y * distance + gLights[curLight].attenuation.z * distance * distance);
 
-    vec4 ambientColor = vec4((diffuseMaterial * gMaterial.ambient) * gLights[0].ambient, 1.0f);
+        vec3 toLight = normalize(gLights[curLight].position - posW);
+        float diffuseLight = max(dot(toLight, normWFixed), 0.0f);
+        vec3 diffuseColor = (diffuseMaterial * gLights[curLight].diffuse) * diffuseLight;
 
-    outputColor = ((diffuseColor + specColor) * att) + ambientColor;
+        vec3 toEye = normalize(gCamPos - posW);
+        vec3 r = reflect(-toLight, normW);
+        float t = pow(max(dot(r, toEye), 0.0f), gMaterial.specPower);
+        vec3 specColor = (gMaterial.specular * gLights[curLight].specular) * t;
+
+        vec3 ambientColor = (diffuseMaterial * gMaterial.ambient) * gLights[curLight].ambient;
+        finalLightColor += ((diffuseColor + specColor) * att) + ambientColor;
+    }
+
+    outputColor = vec4(finalLightColor, 1.0);
 }
