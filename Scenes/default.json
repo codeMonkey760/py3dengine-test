@@ -181,6 +181,38 @@
         "visible": true
       },
       {
+        "name": "BackgroundLight",
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "orientation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "scale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "components": [
+          {
+            "name": "BackgroundLight.LC",
+            "type": "LightComponent",
+            "lightType": 1,
+            "diffuse": [0.0, 0.0, 0.0],
+            "specular": [0.0, 0.0, 0.0],
+            "ambient": [0.1, 0.1, 0.1],
+            "intensity": 0.0,
+            "attenuation": [0.0, 0.01, 0.01]
+          }
+        ],
+        "children": []
+      },
+      {
         "name": "RedLight",
         "position": {
           "x": 10.0,
@@ -206,7 +238,7 @@
             "diffuse": [1.0, 0.1, 0.1],
             "specular": [1.0, 0.1, 0.1],
             "ambient": [0.0, 0.0, 0.0],
-            "intensity": 4.0,
+            "intensity": 3.0,
             "attenuation": [0.0, 0.01, 0.01]
           }
         ],
@@ -238,7 +270,7 @@
             "diffuse": [0.1, 1.0, 0.1],
             "specular": [0.1, 1.0, 0.1],
             "ambient": [0.0, 0.0, 0.0],
-            "intensity": 4.0,
+            "intensity": 2.0,
             "attenuation": [0.0, 0.01, 0.01]
           }
         ],
@@ -270,7 +302,7 @@
             "diffuse": [0.1, 0.1, 1.0],
             "specular": [0.1, 0.1, 1.0],
             "ambient": [0.0, 0.0, 0.0],
-            "intensity": 4.0,
+            "intensity": 3.0,
             "attenuation": [0.0, 0.01, 0.01]
           }
         ],
