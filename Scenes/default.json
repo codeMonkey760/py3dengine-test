@@ -45,7 +45,9 @@
             "model": "Cube",
             "shader": "general_pnt",
             "material": "SolidRed",
-            "visible": true
+            "visible": true,
+            "is_shadow_caster": true,
+            "is_shadow_receiver": true
           },
           {
             "name": "Anvil.BoxCollider",
@@ -87,7 +89,9 @@
             "type": "ModelRendererComponent",
             "model": "Cube",
             "shader": "general_pnt",
-            "material": "SolidRed"
+            "material": "SolidRed",
+            "is_shadow_caster": true,
+            "is_shadow_receiver": true
           },
           {
             "name": "Hammer.BoxCollider",
